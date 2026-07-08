@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Om Prakash Thakur | The GeoNexus Portfolio</title>
+    <!-- Website Icon (Favicon) -->
+    <link rel="icon" type="image/png" href="ChatGPT Image Jun 23, 2026, 07_36_03 AM.png">
+    <style>
+	/* Social & Research Profile Buttons */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .social-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            background-color: #f8f9fa;
+            color: #0b1c3a;
+            text-decoration: none;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        .social-btn i {
+            font-size: 1.3rem;
+            color: #2980b9;
+            transition: color 0.3s ease;
+        }
+        .social-btn:hover {
+            background-color: #0b1c3a;
+            color: white;
+            border-color: #0b1c3a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .social-btn:hover i {
+            color: #4da6ff;
+        }
+        /* CSS: Upgraded styles for a modern, engineering-focused aesthetic */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.8;
+        }
+        header {
+            background-color: #0b1c3a; 
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: white;
+        }
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        /* Navigation Buttons */
+        nav button {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            margin: 0 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+            font-family: inherit;
+        }
+        nav button:hover, nav button.active {
+            color: #4da6ff;
+            border-bottom: 2px solid #4da6ff;
+            padding-bottom: 2px;
+        }
+
+        /* TAB LOGIC: Hide all sections by default */
+        .tab-content {
+            display: none; 
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        .tab-content.active {
+            display: block; 
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Banner & Hero Section */
+        .banner-container {
+            width: 100%;
+            background-color: #e0e6ed;
+            text-align: center;
+            border-bottom: 3px solid #0b1c3a;
+        }
+        .hero-banner-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            opacity: 0.9;
+        }
+        .profile-section {
+            padding: 40px 20px;
+            text-align: center;
+            background: linear-gradient(to bottom, #ffffff, #f4f7f6);
+        }
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #0b1c3a;
+            margin-top: -90px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            background-color: white;
+        }
+        h1 {
+            color: #0b1c3a;
+            margin-bottom: 5px;
+            font-size: 2.5rem;
+        }
+        .tagline {
+            font-size: 1.2rem;
+            color: #2980b9;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        /* Content Containers */
+        .page-header {
+            background-color: #e0e6ed;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 3px solid #0b1c3a;
+        }
+        .page-header h2 {
+            font-size: 2.5rem;
+            color: #0b1c3a;
+            border: none;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+        .card h2 {
+            color: #0b1c3a;
+            border-bottom: 2px solid #4da6ff;
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+        .card h3 {
+            color: #2980b9;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+            margin-top: 25px;
+        }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+
+        /* Tools Sub-Navigation */
+        .tools-nav {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0e6ed;
+            padding-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        .tools-nav button {
+            background-color: #e0e6ed;
+            color: #0b1c3a;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .tools-nav button:hover, .tools-nav button.active-tool {
+            background-color: #0b1c3a;
+            color: white;
+        }
+        .tool-panel {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        .tool-panel.active-tool {
+            display: block;
+        }
+
+        /* Calculator Grid Layout */
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            background: #f8f9fa;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .input-group label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #0b1c3a;
+        }
+        .input-group input, .input-group select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .result-box {
+            grid-column: 1 / -1;
+            background-color: #0b1c3a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        .result-box h4 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .result-box span {
+            color: #4da6ff;
+        }
+        
+        /* CV Specific Styles */
+        .cv-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+        .cv-section h3 {
+            border-bottom: 1px solid #e0e6ed;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .cv-item {
+            margin-bottom: 25px;
+        }
+        .cv-date {
+            font-style: italic;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .cv-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .cv-table th, .cv-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .cv-table th {
+            background-color: #f2f2f2;
+            color: #0b1c3a;
+        }
+
+        /* Roadmap Grid */
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .btn-download {
+            display: inline-block;
+            background-color: #4da6ff;
+            color: #0b1c3a;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+        .btn-download:hover {
+            background-color: #0b1c3a;
+            color: white;
+        }
+
+        footer {
+            text-align: center; 
+            padding: 4rem 5%; 
+            background-color: #0b1c3a;
+            color: white;
+            border-top: 1px solid rgba(255,255,255,0.05); 
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="ChatGPT Image Jun 23, 2026, 07_36_03 AM.png" alt="The GeoNexus Logo" class="logo-img">
+            <div class="logo-text">The GeoNexus</div>
+        </div>
+        <nav>
+            <button class="nav-btn active" onclick="openTab(event, 'home')">Home</button>
+            <button class="nav-btn" onclick="openTab(event, 'research')">Research</button>
+            <button class="nav-btn" onclick="openTab(event, 'field-visits')">Field Visits</button>
+            <button class="nav-btn" onclick="openTab(event, 'awards')">Awards</button>
+            <button class="nav-btn" onclick="openTab(event, 'cv')">CV</button>
+            <button class="nav-btn" onclick="openTab(event, 'geonexus')">The Geo Nexus</button>
+            <button class="nav-btn" onclick="openTab(event, 'roadmap')">Roadmap</button>
+        </nav>
+    </header>
+
+    <div id="home" class="tab-content active">
+        <div class="banner-container">
+            <img src="1000090440.png" alt="The GeoNexus Banner" class="hero-banner-img">
+        </div>
+        <div class="profile-section">
+            <img src="Firefly Generated Image.png" alt="O.P. Thakur Profile" class="profile-img">
+            <h1>Om Prakash Thakur</h1>
+            <div class="tagline">Geotechnical Engineer | Geo-AI Researcher | Numerical Modeller | IITian</div>
+            <div class="tagline" style="color: #4da6ff;">"Decoding The Ground, Designing The Future"</div>
+        </div>
+	
+        <div class="container">
+            <div class="card">
+                <h2>The GeoNexus Vision</h2>
+                <p>I wrote this roadmap for myself and for every geotechnical engineer who refuses to be ordinary. Geotechnical engineering is undergoing a quiet revolution. The engineer who once relied solely on traditional theory now competes in a world where numerical modelling, machine learning, physics-informed neural networks, and cloud deployment are becoming table stakes.</p>
+                <p><strong>Core Philosophy:</strong> Theory is our foundation, mathematics our language, and software our tool. At TheGeoNexus, we bridge these with Data Science, Deep Learning, and AI. By integrating GIS, Remote Sensing, and Digital Twins, we move beyond traditional limits to provide intelligence for the ground beneath us—decoding the ground and designing the future with solutions that are truly irreplaceable.</p>
+            </div>
+        </div>
+	<div class="card full-width">
+                <h2>Connect & Research Profiles</h2>
+                <p>Explore my academic publications, professional network, and open-source contributions across the following platforms:</p>
+                
+                <div class="social-grid">
+                    <a href="#" target="_blank" class="social-btn"><i class="ai ai-google-scholar"></i> Google Scholar</a>
+                    <a href="#" target="_blank" class="social-btn"><i class="ai ai-researchgate"></i> ResearchGate</a>
+                    <a href="#" target="_blank" class="social-btn"><i class="ai ai-orcid"></i> ORCID</a>
+                    <a href="#" target="_blank" class="social-btn"><i class="ai ai-scopus"></i> Scopus</a>
+                    <a href="#" target="_blank" class="social-btn"><i class="fas fa-earth-americas"></i> EGU Profile</a>
+                    <a href="#" target="_blank" class="social-btn"><i class="fas fa-globe"></i> AGU Profile</a>
+                    
+                    <a href="#" target="_blank" class="social-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="#" target="_blank" class="social-btn"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="mailto:opthakuriitm@gmail.com" class="social-btn"><i class="fas fa-envelope"></i> Gmail</a>
+                    <a href="https://www.youtube.com/@M_AI_Guru" target="_blank" class="social-btn"><i class="fab fa-youtube"></i> YouTube</a>
+                    <a href="#" target="_blank" class="social-btn"><i class="fab fa-x-twitter"></i> X (Twitter)</a>
+                </div>
+            </div>
+    </div>
+
+    <div id="research" class="tab-content">
+        <div class="page-header">
+            <h2>Research & Innovations</h2>
+            <p style="color: #2980b9; font-weight: bold;">Bridging Classical Geotechnics with Deep Learning</p>
+        </div>
+        <div class="container">
+            <div class="card">
+                <h2>Track: Geo-AI & Smart Geotechnics</h2>
+                <p>My core research focus lies at the intersection of geotechnical engineering and artificial intelligence.</p>
+                <h3>Physics-Informed Neural Networks (PINNs)</h3>
+                <ul>
+                    <li>Developing PINN solvers for Terzaghi 1D consolidation and seepage PDEs.</li>
+                    <li>Embedding governing PDEs to solve geomechanics challenges with sparse datasets.</li>
+                    <li>Developed Terzaghi Bearing Capacity Calculator.</li>
+                    <li>Developed SPT N₆₀ Energy Correction Modeler.</li>
+                </ul>
+                <h3>Machine & Deep Learning</h3>
+                <ul>
+                    <li>Utilizing XGBoost, Random Forest, and SVM for soil classification and liquefaction prediction.</li>
+                    <li>Implementing LSTM networks for time-series settlement monitoring.</li>
+                    <li>Developed 1D Consolidation Settlement Simulator.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="field-visits" class="tab-content">
+        <div class="page-header">
+            <h2>Field Visits & Site Investigations</h2>
+        </div>
+        <div class="container">
+            <div class="card">
+                <h2>High-Altitude Infrastructure (Ladakh)</h2>
+                <ul>
+                    <li><strong>Tanglang La Tunnel:</strong> Coordinated Airborne Electromagnetic survey as a Site In-Charge.</li>
+                    <li><strong>Lachung La Tunnel:</strong> Coordinated Airborne Electromagnetic survey as a Site In-Charge.</li>
+                    <li><strong>Upshi Helipad:</strong> Supervised the laying of Dense Bituminous Macadam (DBM).</li>
+                    <li><strong>UT Ladakh Infrastructure Works:</strong> Contributed to multiple projects for various clients of UT Ladakh Administration, Intelligence Bureau works at remote location of Ladakh Region by doing Surveying, Planning, Design scrutiny, estimation, supervision and monitoring.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="awards" class="tab-content">
+        <div class="page-header">
+            <h2>Awards and Achievements</h2>
+        </div>
+        <div class="container">
+            <div class="card">
+                <h2>National Cadet Corps (NCC)</h2>
+                <ul>
+                    <li><strong>All India Nau Sainik Camp 2018:</strong></li>
+                    <li>3rd position overall.</li>
+                    <li>1st position in Services Subject.</li>
+                    <li>2nd Position in Semaphore.</li>
+                    <li>3rd position in Boat Pulling competition.</li>
+                    <li><strong>Best Senior:</strong> Gold medal at ATC-118, NCC Academy Ropar.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="cv" class="tab-content">
+        <div class="page-header">
+            <h2>Curriculum Vitae</h2>
+            <p style="color: #2980b9; font-weight: bold;">Civil Engineer | Infrastructure Projects | Skill Development</p>
+        </div>
+        <div class="container cv-grid">
+            <div class="cv-main">
+                <div class="card">
+                    <a href="resume5.pdf" class="btn-download" download>Download My Complete CV</a>
+                    <h2>Professional Summary</h2>
+                    <p>Dedicated, analytical, and results-driven Civil Engineer with over four years of combined professional experience spanning infrastructure planning and execution, surveying, structural and master-plan design, DPR and estimate preparation, and the administration of large-scale skill-development and vocational-training programmes under Government of India initiatives.</p>
+                    <p>GATE-qualified Four times (2020, 2023, 2024 and 2026), with a strong foundation in civil-engineering fundamentals and a proven ability to coordinate with multiple government departments, consultants, contractors, and community stakeholders. Highly organized and self-motivated, with strong skills in documentation, data management, monitoring, and reporting committed to delivering quality outcomes in challenging environments, including high-altitude regions such as Ladakh.</p>
+                </div>
+
+                <div class="card cv-section">
+                    <h2>Work Experience</h2>
+                    
+                    <div class="cv-item">
+                        <h3>Assistant Programme Officer</h3>
+                        <span class="cv-date">Jan Shikshan Sansthan (JSS), Mandi (H.P.) - MSDE, Govt. of India | Nov 2021 - Jun 2025</span>
+                        <ul>
+                            <li>Worked at a skill-development institution sponsored by the Ministry of Skill Development and Entrepreneurship (MSDE), handling planning, implementation, monitoring, coordination, documentation, and management of skill and vocational-training programmes under the Skill India Mission for rural and disadvantaged communities.</li>
+                            <li>Assisted in preparing annual action plans, training schedules, implementation strategies, and monitoring mechanisms for skill-development initiatives.</li>
+                            <li>Coordinated with the Director, training centres, resource persons, trainers, community organizations, and government departments for effective programme delivery.</li>
+                            <li>Conducted field surveys, needs assessments, and beneficiary-identification exercises to determine local skill requirements and employment opportunities.</li>
+                            <li>Led mobilization drives, awareness campaigns, community-outreach programmes, and promotional activities to maximize beneficiary participation.</li>
+                            <li>Organized orientation sessions, capacity-building workshops, and training-of-trainers (ToT) activities to improve programme quality.</li>
+                            <li>Monitored vocational training through field visits, trainee interaction, review of records, and assessment of programme outcomes.</li>
+                            <li>Performed data entry, verification, and uploading of trainee, trainer, assessment, and programme data on the Skill India Portal and other digital platforms, ensuring accuracy and timely submission.</li>
+                            <li>Maintained trainee databases, attendance, assessment, placement, certification, and performance records.</li>
+                            <li>Prepared progress, monthly, utilization, and performance reports, meeting proceedings, presentations, proposals, and official correspondence.</li>
+                            <li>Facilitated assessment & certification with agencies, training providers, and candidates; organized examinations and evaluation processes.</li>
+                            <li>Organized skill fairs, exhibitions, entrepreneurship and placement-linked activities, and market-linkage initiatives showcasing trainee products and services.</li>
+                            <li>Supported administrative, financial, and operational functions including procurement coordination, logistics, and stakeholder communication, ensuring compliance with MSDE guidelines.</li>
+                        </ul>
+                    </div>
+
+                    <div class="cv-item">
+                        <h3>Trainee Graduate Engineer</h3>
+                        <span class="cv-date">RO-Ladakh, NHIDCL MoRT&H, Govt. of India | Oct 2020 - Oct 2021</span>
+                        <ul>
+                            <li>Contributed to multiple infrastructure projects across the high-altitude UT of Ladakh for various clients, covering planning, surveying, design, estimation, and execution.</li>
+                            <li>Planned, directed, and participated in surveying for the School Education, Urban Local Bodies, and Hospitality & Protocol Departments.</li>
+                            <li>Analyzed survey reports, maps, blueprints, and topographical/geological data to plan infrastructure works, roads, and tunneling.</li>
+                            <li>Designed and prepared plans, specifications, DPRs, and preliminary & detailed estimates for Type-IV quarters & hostels, a 24x7 centrally heated library, central heating systems, laboratory blocks, art & craft rooms, and boundary walls.</li>
+                            <li>Drafted and reviewed reports, specifications, construction schedules, and designs; checked technical drawings for adherence to codes and standards.</li>
+                            <li>Collaborated with UT officials, local agencies/contractors, architects, engineers, and consultants on regulatory compliance.</li>
+                            <li>Followed up and attended meetings with UT officials, contractors, consultants and internal NHIDCL staff to collect information, resolve issues and support project progress.</li>
+                            <li>Supervised the execution of pre-fabricated (LGFS technology) buildings.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card cv-section">
+                    <h2>Key Projects Handled (Ladakh) - NHIDCL</h2>
+                    <table class="cv-table">
+                        <tr>
+                            <th>Project/Work</th>
+                            <th>Description & Scope</th>
+                        </tr>
+                        <tr>
+                            <td>Tanglang La Tunnel - AEM Survey</td>
+                            <td>Coordinated and assisted the Airborne Electromagnetic survey team for the Tanglang La tunnel survey from Upshi, Leh; gained insight into tunneling feasibility studies.</td>
+                        </tr>
+                        <tr>
+                            <td>Construction of Helipad</td>
+                            <td>Laying of Dense Bituminous Macadam (DBM) at Upshi Helipad, Upshi, Leh.</td>
+                        </tr>
+                        <tr>
+                            <td>DIET Leh Master Plan</td>
+                            <td>Finalized with the Commissioner/Secretary, Director SED, and NHIDCL consultant a 100-bedded hostel (Hospitality & Protocol Dept.) and a 600-capacity auditorium with steel roof and rock-wool insulation (School Education Dept.).</td>
+                        </tr>
+                        <tr>
+                            <td>UT Ladakh Secretariat Master Plan</td>
+                            <td>Internal circular road network, pedestrian & landscaping plan, multilevel car parking, service-duct network, meeting hall, cafeteria, and reception area.</td>
+                        </tr>
+                        <tr>
+                            <td>CCTV Control Room Solar Colony, Choglamsar</td>
+                            <td>Control room with data-storage room, battery room, in-charge room, and rest room with attached kitchen and toilets.</td>
+                        </tr>
+                        <tr>
+                            <td>Ladakh Police Prefab Structures</td>
+                            <td>LGFS technology with Trombe wall in battery room; double-charged vitrified-tile flooring, anti-skid ceramic tiles in toilets, and galvanized-steel roof with rock-wool insulation.</td>
+                        </tr>
+                        <tr>
+                            <td>Ladakh Police Gyms & Facilities</td>
+                            <td>Gyms with male/female lockers, waiting & reception, and in-charge rooms at Agling, DPL Choglamsar, and Police HQ Agling-LGFS technology with insulated roofing.</td>
+                        </tr>
+                        <tr>
+                            <td>School Education Department Works</td>
+                            <td>RCC works boundary walls, Type-IV hostels, 24x7 centrally heated library, laboratory & art/craft blocks; building strengthening, solar rooms; and CBSE-standard upgradation of schools.</td>
+                        </tr>
+                        <tr>
+                            <td>RCC Works Ladakh Police</td>
+                            <td>Coordinated with Ladakh Police officials and consultants for smooth planning and execution of RCC infrastructure works.</td>
+                        </tr>
+                        <tr>
+                            <td>Heating Systems - UT Ladakh</td>
+                            <td>Central heating with radiator panels & boiler; VRV/VRF cassette HVAC for simultaneous heating/cooling, suited for -25°C to 50°C climates.</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="card cv-section">
+                    <h2>Internship & Training</h2>
+                    <div class="cv-item">
+                        <h3>Summer Intern</h3>
+                        <span class="cv-date">PIU Hamirpur, NHAI - MoRT&H, Govt. of India | Jun 2019 - Jul 2019</span>
+                        <ul>
+                            <li>Studied maintenance of the existing road from Km 151.870 to Km 157.000 of NH-88 (now NH-205), which provided real-world exposure to how work is carried out on a practical project.</li>
+                            <li>Learnt various aspects of road maintenance and field execution procedures.</li>
+                            <li>Studied the MoRT&H manual, project maps, and relevant technical documentation.</li>
+                            <li>Gained hands-on experience of on-site field work and supervision.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                 <div class="card cv-section">
+                    <h2>Academic Projects</h2>
+                    <div class="cv-item">
+                        <h3>Analysis of Congestion Areas & Black Spots on NH-03 (2019-2020)</h3>
+                        <ul>
+                            <li>Performed detailed analysis of traffic congestion and accident-prone locations on NH-03 using spatial, temporal, and non-spatial data.</li>
+                            <li>Assessed accident patterns, roadway geometry, and traffic characteristics to identify critical safety concerns and formulate engineering-based remedial measures.</li>
+                            <li><strong>Key Recommendations:</strong>
+                                <ul>
+                                    <li>Relocation of NIT Hamirpur Gate-2 to improve traffic operations and sight distance.</li>
+                                    <li>Construction of a pedestrian overbridge for enhanced safety.</li>
+                                    <li>Installation of speed-calming measures and traffic signals.</li>
+                                    <li>Geometric improvement and widening of the adjacent sharp curve.</li>
+                                    <li>Provision of speed regulation signs, warning boards, and road safety infrastructure.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cv-sidebar">
+                <div class="card">
+                    <h2>Education</h2>
+                    <div class="cv-item">
+                        <strong>M.Tech, Geotechnical Engineering</strong><br>
+                        IIT Madras<br>
+                        <span class="cv-date">2026 - Present</span>
+                    </div>
+                    <hr style="border: 0; border-top: 1px solid #e0e6ed; margin: 15px 0;">
+                    <div class="cv-item">
+                        <strong>B.Tech, Civil Engineering</strong><br>
+                        National Institute of Technology, Hamirpur<br>
+                        <span class="cv-date">2016 - 2020</span><br>
+                        CGPA 7.97/10
+                    </div>
+                    <hr style="border: 0; border-top: 1px solid #e0e6ed; margin: 15px 0;">
+                    <div class="cv-item">
+                        <strong>CBSE Senior Secondary (XII)</strong><br>
+                        Jawahar Navodaya Vidyalaya, Mandi<br>
+                        <span class="cv-date">2015</span><br>
+                        90.40%
+                    </div>
+                    <hr style="border: 0; border-top: 1px solid #e0e6ed; margin: 15px 0;">
+                    <div class="cv-item">
+                        <strong>CBSE Matriculation (X)</strong><br>
+                        Jawahar Navodaya Vidyalaya, Mandi<br>
+                        <span class="cv-date">2013</span><br>
+                        CGPA 9.2/10
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Certifications & Competitive Qualifications</h2>
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li style="margin-bottom: 8px;">• GATE (Civil Engineering) 2026 - Qualified</li>
+                        <li style="margin-bottom: 8px;">• GATE (Civil Engineering) 2024 - Qualified</li>
+                        <li style="margin-bottom: 8px;">• GATE (Civil Engineering) 2023 - Qualified</li>
+                        <li style="margin-bottom: 8px;">• GATE (Civil Engineering) 2020 - Qualified</li>
+                        <li style="margin-bottom: 8px;">• JEE Main & Advanced 2016 - Qualified</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h2>Skills</h2>
+                    <div class="cv-item">
+                        <strong>Software & Tools:</strong><br>
+                        C++, C, AutoCAD, MS Office (Word, Excel, PowerPoint), Leica LISCAD, ArcGIS, Skill India Portal/ MIS.
+                    </div>
+                    <div class="cv-item">
+                        <strong>Technical:</strong><br>
+                        Site layout & cost estimation, surveying, DPR & estimate preparation, structural & master-plan design, project planning, supervision & execution, scrutiny as per GOI Manual and BIS standard.
+                    </div>
+                     <div class="cv-item">
+                        <strong>Programme Management:</strong><br>
+                        Programme planning, stakeholder coordination, monitoring & evaluation, documentation, data management, and reporting.
+                    </div>
+                    <div class="cv-item">
+                        <strong>Professional/Soft:</strong><br>
+                        Leadership, teamwork, organizing ability, initiative, perseverance, communication, and management skills.
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h2>Positions of Responsibility</h2>
+                    <ul style="padding-left: 15px; font-size: 0.95rem;">
+                        <li><strong>NHIDCL:</strong> Site Office In-charge (Oct 2020-Oct 2021); organized a cleanliness drive at Upshi and a free eye check-up camp for drivers in Leh during the 32nd Road Safety Awareness Month, MoRT&H.</li>
+                        <li><strong>NCC, NIT Hamirpur:</strong> Cadet (2017-2019) and P.O. Cadet (2019-2020), Unit 1 HP NU NCC Bilaspur, team member, AINSC 2018; leading member in various camp campaigns.</li>
+                        <li><strong>Sports Club (2016-2020):</strong> Captain of the college and inter-year/inter-branch volleyball & basketball teams; Executive Member & Year Representative; organized annual and hostel tournaments.</li>
+                        <li><strong>Prayas - The Literacy Mission (2017-2019):</strong> Provided a helping hand for the education of needy students.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Achievements</h2>
+                    <ul style="padding-left: 15px; font-size: 0.95rem;">
+                        <li><strong>All India Nau Sainik Camp (AINSC) 2018:</strong> INS Kadamba, Karwar, Karnataka. Represented the Punjab, Haryana, Himachal Pradesh & Chandigarh Directorate, securing all-India 3rd position overall.
+                            <ul>
+                                <li>Services Subject: 1st Place</li>
+                                <li>Semaphore: 2nd Place</li>
+                                <li>Boat Puller: 3rd Prize (First-ever Boat Puller from NIT Hamirpur)</li>
+                            </ul>
+                        </li>
+                        <li>Achieved 1.2 km open-sea swimming during the Sailing Expedition 2018 at Govind Sagar Lake.</li>
+                        <li>Awarded a gold medal for Best Senior at ATC-118, NCC Academy Ropar; attended DNTC 2/3/4 (2018).</li>
+                        <li>Secured "A" grade in NCC 'A', 'B', and 'C' certificates; 1st in drill competition at CATC 2012, Darang Mandi.</li>
+                        <li>Two-time Best Athlete of the Year (2018, 2019) at the NIT Hamirpur Annual Sports Meet "Lalkaar".</li>
+                        <li>Secured 3rd place in the "Run for Unity" Marathon.</li>
+                        <li>Represented NIT Hamirpur in volleyball at ITUSA (3rd, 2017), URJA (3rd, 2018) & MST (2nd, 2020), and in All-India Inter-NIT Athletics & Gymnastics 2018.</li>
+                        <li>Played regional-level basketball (2012) and volleyball (2014) tournaments.</li>
+                    </ul>
+                </div>
+                
+                 <div class="card">
+                    <h2>Contact Information</h2>
+                    <p style="font-size: 0.95rem; line-height: 1.6;">
+                        <strong>Phone:</strong> +91 70186 62788<br>
+                        <strong>Email:</strong> opthakuriitm@gmail.com<br>
+                        <strong>Address:</strong> Mandi, H.P.(175001). India🇮🇳
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="geonexus" class="tab-content">
+        <div class="page-header">
+            <h2>The GeoNexus Dashboard</h2>
+            <p style="color: #2980b9; font-weight: bold;">Interactive Geotechnical Simulations & Models</p>
+        </div>
+        <div class="container">
+            <div class="card">
+                
+                <div class="tools-nav">
+                    <button class="tool-btn active-tool" onclick="openTool(event, 'bearing-tool')">Bearing Capacity</button>
+                    <button class="tool-btn" onclick="openTool(event, 'spt-tool')">SPT Correction</button>
+                    <button class="tool-btn" onclick="openTool(event, 'settlement-tool')">1D Consolidation</button>
+                </div>
+
+                <div id="bearing-tool" class="tool-panel active-tool">
+                    <h3>Terzaghi Bearing Capacity Calculator</h3>
+                    <p>Determine the ultimate bearing capacity for shallow foundations based on Terzaghi's theory. Adjust the soil parameters to see how the bearing capacity responds in real-time.</p>
+                    <div class="calculator-grid">
+                        <div class="input-group">
+                            <label>Cohesion, c (kPa):</label>
+                            <input type="number" id="c-val" oninput="calcBearing()" value="0">
+                        </div>
+                        <div class="input-group">
+                            <label>Friction Angle, φ (degrees):</label>
+                            <input type="number" id="phi-val" oninput="calcBearing()" value="30">
+                        </div>
+                        <div class="input-group">
+                            <label>Unit Weight, γ (kN/m³):</label>
+                            <input type="number" id="gam-val" oninput="calcBearing()" value="18">
+                        </div>
+                        <div class="input-group">
+                            <label>Width of Footing, B (m):</label>
+                            <input type="number" id="b-val" oninput="calcBearing()" value="2">
+                        </div>
+                        <div class="input-group">
+                            <label>Depth of Footing, Df (m):</label>
+                            <input type="number" id="df-val" oninput="calcBearing()" value="1">
+                        </div>
+                        <div class="input-group">
+                            <label>Footing Shape:</label>
+                            <select id="shape-val" onchange="calcBearing()">
+                                <option value="strip">Strip</option>
+                                <option value="square">Square</option>
+                                <option value="circular">Circular</option>
+                            </select>
+                        </div>
+                        <div class="result-box">
+                            <h4>Ultimate Bearing Capacity (q<sub>u</sub>): <br><span id="bearing-result">0.00 kPa</span></h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="spt-tool" class="tool-panel">
+                    <h3>SPT N₆₀ Energy Correction Modeler</h3>
+                    <p>Standardize field N-values based on drilling rig and sampler variations. This tool simulates the correction process necessary for accurate empirical correlations.</p>
+                    <div class="calculator-grid">
+                        <div class="input-group">
+                            <label>Field Blow Count (N<sub>field</sub>):</label>
+                            <input type="number" id="n-field" oninput="calcSPT()" value="15">
+                        </div>
+                        <div class="input-group">
+                            <label>Hammer Efficiency (E<sub>m</sub> %):</label>
+                            <input type="number" id="em-val" oninput="calcSPT()" value="60">
+                        </div>
+                        <div class="input-group">
+                            <label>Borehole Dia. Factor (C<sub>B</sub>):</label>
+                            <select id="cb-val" onchange="calcSPT()">
+                                <option value="1.0">65 - 115 mm (1.0)</option>
+                                <option value="1.05">150 mm (1.05)</option>
+                                <option value="1.15">200 mm (1.15)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Sampler Factor (C<sub>S</sub>):</label>
+                            <select id="cs-val" onchange="calcSPT()">
+                                <option value="1.0">Standard Sampler (1.0)</option>
+                                <option value="1.2">Without Liner (1.2)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Rod Length Factor (C<sub>R</sub>):</label>
+                            <select id="cr-val" onchange="calcSPT()">
+                                <option value="0.75">&lt; 4m (0.75)</option>
+                                <option value="0.85">4m - 6m (0.85)</option>
+                                <option value="0.95">6m - 10m (0.95)</option>
+                                <option value="1.00">&gt; 10m (1.00)</option>
+                            </select>
+                        </div>
+                        <div class="result-box">
+                            <h4>Corrected Blow Count (N₆₀): <br><span id="spt-result">0.00</span></h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="settlement-tool" class="tool-panel">
+                    <h3>1D Consolidation Settlement Simulator</h3>
+                    <p>Estimate primary consolidation of clay layers under induced stress. Input your lab results to model the expected settlement.</p>
+                    <div class="calculator-grid">
+                        <div class="input-group">
+                            <label>Compression Index (C<sub>c</sub>):</label>
+                            <input type="number" step="0.01" id="cc-val" oninput="calcSettlement()" value="0.30">
+                        </div>
+                        <div class="input-group">
+                            <label>Initial Void Ratio (e<sub>0</sub>):</label>
+                            <input type="number" step="0.01" id="e0-val" oninput="calcSettlement()" value="0.85">
+                        </div>
+                        <div class="input-group">
+                            <label>Layer Thickness, H<sub>0</sub> (m):</label>
+                            <input type="number" step="0.1" id="h0-val" oninput="calcSettlement()" value="4.0">
+                        </div>
+                        <div class="input-group">
+                            <label>Initial Effective Stress, σ'<sub>0</sub> (kPa):</label>
+                            <input type="number" id="sig0-val" oninput="calcSettlement()" value="50">
+                        </div>
+                        <div class="input-group">
+                            <label>Stress Increase, Δσ' (kPa):</label>
+                            <input type="number" id="dsig-val" oninput="calcSettlement()" value="40">
+                        </div>
+                        <div class="result-box">
+                            <h4>Primary Settlement (S<sub>c</sub>): <br><span id="settlement-result">0.00 mm</span></h4>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- TAB 7: ROADMAP SECTION (FUTURE PLAN)       -->
+    <!-- ========================================== -->
+    <div id="roadmap" class="tab-content">
+        <div class="page-header">
+            <h2>MTech+PhD Roadmap (2026-2030)</h2>
+            <p style="color: #2980b9; font-weight: bold;">A Complete 6-Stage Progression from Fundamentals to Global Recognition.</p>
+        </div>
+        <div class="container">
+            <div class="card" style="text-align: center;">
+                <a href="geonexus_mastery_ultimate.pdf" class="btn-download" download>Download Full Roadmap PDF</a>
+                <p>This roadmap integrates numerical modelling, AI/ML/Deep Learning, research, and communication. It is built upon three continuous pillars that run in parallel: Engineering Mathematics, AI/ML/Deep Learning, and Communication Skills.</p>
+            </div>
+            
+            <div class="roadmap-grid">
+                <!-- Stage 1 -->
+                <div class="card" style="border-left: 5px solid #0b1c3a; margin-bottom: 0;">
+                    <h3>Stage 1: Basic (Foundation Building)</h3>
+                    <ul>
+                        <li>Focuses on soil mechanics, Terzaghi consolidation theory, and IS codes.</li>
+                        <li>Software tools include Excel, AutoCAD, and Civil 3D intro.</li>
+                        <li>AI/ML components cover Python setup, NumPy, Pandas, and linear regression.</li>
+                    </ul>
+                </div>
+                
+                <!-- Stage 2 -->
+                <div class="card" style="border-left: 5px solid #2980b9; margin-bottom: 0;">
+                    <h3>Stage 2: Intermediate (Core Software Mastery)</h3>
+                    <ul>
+                        <li>Covers retaining wall design, slope stability (LEM), and seepage analysis.</li>
+                        <li>Utilizes PLAXIS 2D, GeoStudio, and GEO5.</li>
+                        <li>Implements scikit-learn for Random Forest classification and XGBoost for liquefaction prediction.</li>
+                    </ul>
+                </div>
+                
+                <!-- Stage 3 -->
+                <div class="card" style="border-left: 5px solid #4da6ff; margin-bottom: 0;">
+                    <h3>Stage 3: Advanced (3D Modelling & Deep Learning)</h3>
+                    <ul>
+                        <li>Explores advanced constitutive models, rock mechanics, and tunnelling.</li>
+                        <li>Requires PLAXIS 3D, ABAQUS, FLAC 2D/3D, and RS2/RS3.</li>
+                        <li>Involves Deep Learning with TensorFlow/PyTorch, ANN for settlement prediction, and first PINN prototypes.</li>
+                    </ul>
+                </div>
+                
+                <!-- Stage 4 -->
+                <div class="card" style="border-left: 5px solid #0b1c3a; margin-bottom: 0;">
+                    <h3>Stage 4: Expert (Specialisation, Thesis & Publication)</h3>
+                    <ul>
+                        <li>Deep dives into a chosen specialisation track and reliability-based design.</li>
+                        <li>Uses DEEPSOIL, OpenSees, Settle3, and PLAXIS Python API.</li>
+                        <li>Features full PINN implementation, Bayesian neural networks, and web API deployment using FastAPI and Docker.</li>
+                    </ul>
+                </div>
+                
+                <!-- Stage 5 -->
+                <div class="card" style="border-left: 5px solid #2980b9; margin-bottom: 0;">
+                    <h3>Stage 5: Professional (Industry Leadership & Innovation)</h3>
+                    <ul>
+                        <li>Focuses on project management, BIM integration, and digital geotechnics.</li>
+                        <li>Develops advanced PLAXIS Python scripting and cloud-based simulations.</li>
+                        <li>Deploys production ML pipelines, digital twin prototypes, and the GeoNexus platform V2.0.</li>
+                    </ul>
+                </div>
+                
+                <!-- Stage 6 -->
+                <div class="card" style="border-left: 5px solid #4da6ff; margin-bottom: 0;">
+                    <h3>Stage 6: Apex / Legend (Global Recognition & Platform Building)</h3>
+                    <ul>
+                        <li>Aims for international recognition as a Geo-AI expert and numerical modelling authority.</li>
+                        <li>Develops novel constitutive models integrating AI and contributes to open-source FEM codes.</li>
+                        <li>Achieves 50+ peer-reviewed publications, international keynotes, and a 1000+ user base for the GeoNexus platform.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p style="color: #e0e6ed;">© 2026 GeoNexus || O.P. Thakur. All rights reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 1rem; color: rgba(255,255,255,0.5);">Based in Himachal Pradesh, India | opthakurnith@gmail.com</p>
+    </footer>
+
+    <script>
+        // MAIN TABS LOGIC
+        function openTab(evt, tabName) {
+            var i, tabcontent, navbtns;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            navbtns = document.getElementsByClassName("nav-btn");
+            for (i = 0; i < navbtns.length; i++) {
+                navbtns[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // TOOLS SUB-TABS LOGIC
+        function openTool(evt, toolName) {
+            var i, toolpanels, toolbtns;
+            toolpanels = document.getElementsByClassName("tool-panel");
+            for (i = 0; i < toolpanels.length; i++) {
+                toolpanels[i].classList.remove("active-tool");
+            }
+            toolbtns = document.getElementsByClassName("tool-btn");
+            for (i = 0; i < toolbtns.length; i++) {
+                toolbtns[i].classList.remove("active-tool");
+            }
+            document.getElementById(toolName).classList.add("active-tool");
+            evt.currentTarget.classList.add("active-tool");
+        }
+
+        // TOOL 1: Bearing Capacity Calculation
+        function calcBearing() {
+            const c = parseFloat(document.getElementById('c-val').value) || 0;
+            const phi = parseFloat(document.getElementById('phi-val').value) || 0;
+            const gamma = parseFloat(document.getElementById('gam-val').value) || 0;
+            const B = parseFloat(document.getElementById('b-val').value) || 0;
+            const Df = parseFloat(document.getElementById('df-val').value) || 0;
+            const shape = document.getElementById('shape-val').value;
+
+            const phiRad = phi * (Math.PI / 180);
+            const q = gamma * Df;
+
+            let Nq = 1, Nc = 5.14, Ng = 0;
+            if (phi > 0) {
+                Nq = Math.exp(Math.PI * Math.tan(phiRad)) * Math.pow(Math.tan((45 + (phi / 2)) * (Math.PI / 180)), 2);
+                Nc = (Nq - 1) / Math.tan(phiRad);
+                Ng = 2 * (Nq + 1) * Math.tan(phiRad);
+            }
+
+            let qu = 0;
+            if (shape === 'strip') qu = (c * Nc) + (q * Nq) + (0.5 * gamma * B * Ng);
+            else if (shape === 'square') qu = (1.3 * c * Nc) + (q * Nq) + (0.4 * gamma * B * Ng);
+            else if (shape === 'circular') qu = (1.3 * c * Nc) + (q * Nq) + (0.3 * gamma * B * Ng);
+
+            document.getElementById('bearing-result').innerText = qu.toFixed(2) + " kPa";
+        }
+
+        // TOOL 2: SPT Correction Calculation
+        function calcSPT() {
+            const n = parseFloat(document.getElementById('n-field').value) || 0;
+            const em = parseFloat(document.getElementById('em-val').value) || 0;
+            const cb = parseFloat(document.getElementById('cb-val').value) || 1;
+            const cs = parseFloat(document.getElementById('cs-val').value) || 1;
+            const cr = parseFloat(document.getElementById('cr-val').value) || 1;
+
+            const n60 = (n * (em / 60) * cb * cs * cr);
+            document.getElementById('spt-result').innerText = n60.toFixed(1);
+        }
+
+        // TOOL 3: Settlement Calculation
+        function calcSettlement() {
+            const cc = parseFloat(document.getElementById('cc-val').value) || 0;
+            const e0 = parseFloat(document.getElementById('e0-val').value) || 0;
+            const h0 = parseFloat(document.getElementById('h0-val').value) || 0;
+            const sig0 = parseFloat(document.getElementById('sig0-val').value) || 0;
+            const dsig = parseFloat(document.getElementById('dsig-val').value) || 0;
+
+            let sc = 0;
+            if (sig0 > 0 && dsig > 0) {
+                sc = ( (cc * h0) / (1 + e0) ) * Math.log10( (sig0 + dsig) / sig0 ) * 1000; 
+            }
+            document.getElementById('settlement-result').innerText = sc.toFixed(2) + " mm";
+        }
+        
+        // Initial Calculation on page load for all tools
+        window.onload = function() {
+            calcBearing();
+            calcSPT();
+            calcSettlement();
+        };
+    </script>
+
+</body>
+</html>
