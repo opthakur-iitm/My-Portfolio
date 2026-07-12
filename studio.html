@@ -108,17 +108,36 @@
               </div>
             </a>
           </div>
-
           <!-- Quick Technical Prompt Builder -->
           <div class="bg-dark p-3 rounded-3 border border-secondary mt-auto">
-            <h6 class="fw-semibold small text-uppercase text-primary mb-2"><i class="bi bi-lightbulb me-1"></i> Geotech Prompt Generator</h6>
-            <p class="small text-muted mb-2" style="font-size: 0.8rem;">Click to copy an optimized research prompt to your clipboard:</p>
-            <button onclick="copyPrompt('Provide a detailed geotechnical breakdown of SPT N60 energy correction factors, including formulas and practical field challenges.')" class="btn btn-outline-light btn-sm w-100 mb-2 text-start" style="font-size: 0.78rem;">
-              <i class="bi bi-clipboard me-1"></i> SPT N60 Correction Mechanics
-            </button>
-            <button onclick="copyPrompt('Summarize recent advancements in Machine Learning algorithms applied to soil slope stability and bearing capacity prediction.')" class="btn btn-outline-light btn-sm w-100 text-start" style="font-size: 0.78rem;">
-              <i class="bi bi-clipboard me-1"></i> ML in Slope Stability
-            </button>
+            <h6 class="fw-semibold small text-uppercase text-primary mb-2"><i class="bi bi-lightbulb me-1"></i> Open-Access Prompt Desk</h6>
+            <p class="small text-muted mb-2" style="font-size: 0.8rem;">Click to copy an optimized engineering prompt to your clipboard:</p>
+            
+            <div style="max-height: 250px; overflow-y: auto; padding-right: 5px;">
+              <button onclick="copyPrompt('Act as an expert geotechnical engineer. Provide a rigorous, textbook-style technical explanation of Terzaghi\'s 1D consolidation theory, detailing the mathematical derivation of the governing differential equation, physical assumptions, and common laboratory parameters (Cc, Cv, e0).')" class="btn btn-outline-light btn-sm w-100 mb-2 text-start text-truncate" style="font-size: 0.78rem;">
+                <i class="bi bi-clipboard me-1"></i> Terzaghi 1D Consolidation Theory
+              </button>
+              
+              <button onclick="copyPrompt('Provide a comprehensive breakdown of standard penetration test (SPT) N-value corrections. Explain the physical mechanics behind energy efficiency (N60), borehole diameter, sampler configurations, and overburden pressure adjustments with typical engineering code coefficients.')" class="btn btn-outline-light btn-sm w-100 mb-2 text-start text-truncate" style="font-size: 0.78rem;">
+                <i class="bi bi-clipboard me-1"></i> SPT N60 Correction Mechanics
+              </button>
+              
+              <button onclick="copyPrompt('Write an analytical literature review scoping the integration of Machine Learning (such as Random Forests and XGBoost) in predicting soil slope stability factors of safety. Compare traditional limit equilibrium methods (LEM) with data-driven predictive models.')" class="btn btn-outline-light btn-sm w-100 mb-2 text-start text-truncate" style="font-size: 0.78rem;">
+                <i class="bi bi-clipboard me-1"></i> Machine Learning in Slope Stability
+              </button>
+
+              <button onclick="copyPrompt('Draft an outline for an engineering case study detailing high-altitude infrastructure execution challenges. Focus on permafrost degradations, sub-zero asphalt paving logistics, thermal insulation structures (like Trombe walls), and geophysical tunnel exploratory frameworks.')" class="btn btn-outline-light btn-sm w-100 mb-2 text-start text-truncate" style="font-size: 0.78rem;">
+                <i class="bi bi-clipboard me-1"></i> High-Altitude Project Challenges
+              </button>
+
+              <button onclick="copyPrompt('Act as a technical editor. Review the provided technical article draft for academic prose, flow, structural consistency, and clarity. Suggest precise vocabulary replacements for engineering terms without changing the core mathematical meanings.')" class="btn btn-outline-light btn-sm w-100 mb-2 text-start text-truncate" style="font-size: 0.78rem;">
+                <i class="bi bi-clipboard me-1"></i> Academic Draft Editor Prompt
+              </button>
+
+              <button onclick="copyPrompt('Generate a clean, structured outline for an article covering Physics-Informed Neural Networks (PINNs) in geomechanics. Explain conceptually how partial differential equations (PDEs) are embedded directly into deep learning loss functions.')" class="btn btn-outline-light btn-sm w-100 text-start text-truncate" style="font-size: 0.78rem;">
+                <i class="bi bi-clipboard me-1"></i> Physics-Informed AI Foundations
+              </button>
+            </div>
           </div>
 
         </div>
