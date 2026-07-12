@@ -127,22 +127,39 @@
   <!-- Scripts -->
   <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
   <script>
-    // Initialize Quill Rich Text Editor
+   // Initialize Quill Rich Text Editor (Now with Photo & Video support)
     var quill = new Quill('#editor-container', {
       theme: 'snow',
-      placeholder: 'Start writing your geotechnical or technical blog post here... Use the toolbar above for headings, bold text, lists, and code blocks.',
+      placeholder: 'Start writing your geotechnical or technical blog post here... Use the toolbar above for headings, bold text, images, videos, and code blocks.',
       modules: {
         toolbar: [
           [{ 'header': [1, 2, 3, false] }],
           ['bold', 'italic', 'underline', 'strike'],
           [{ 'list': 'ordered'}, { 'list': 'bullet' }],
           ['blockquote', 'code-block'],
-          ['link'],
+          ['link', 'image', 'video'], // Added Image and Video buttons here!
           ['clean']
         ]
       }
     });
 
+    // Smart Submit Article Function
+    function submitArticle() {
+      const title = document.getElementById('post-title').value || 'Untitled-GeoNexus-Article';
+      const textContent = quill.getText();
+      
+      if (textContent.trim().length === 0) {
+        alert("Please write some content in the editor before submitting!");
+        return;
+      }
+
+      const subject = encodeURIComponent(`Guest Blog Submission: ${title}`);
+      const introMessage = `Title: ${title}\n\n--- ARTICLE DRAFT ---\n\n${textContent}\n\n-----------------------\n[NOTE TO SENDER]: If you included images, videos, or spreadsheets in your article, please attach those files directly to this email before sending!`;
+      const body = encodeURIComponent(introMessage);
+
+      // Opens default mail app with pre-filled subject and body
+      window.location.href = `mailto:opthakuriitm@gmail.com?subject=${subject}&body=${body}`;
+    }
     // Download Article Function
     function downloadArticle() {
       const title = document.getElementById('post-title').value || 'Untitled-GeoNexus-Article';
