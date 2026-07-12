@@ -1428,7 +1428,7 @@
   </div>
 </footer>
 <!-- END OF COMPACT INQUIRY & FOOTER SECTION -->
-    <script>
+  <script>
         // BANNER SLIDESHOW LOGIC
         let slideIndex = 0;
         function showSlides() {
@@ -1443,9 +1443,10 @@
             if (slideIndex > slides.length) { slideIndex = 1 } 
             
             slides[slideIndex - 1].classList.add('active');
-            setTimeout(showSlides, 10000); // 10000 milliseconds = 10 seconds. Change to 15000 for 15 seconds.
+            setTimeout(showSlides, 10000); // 10 seconds per slide
         }
-        // MAIN TABS LOGIC
+
+        // MAIN TABS LOGIC (WITH URL SHARING SUPPORT)
         function openTab(evt, tabName) {
             var i, tabcontent, navbtns;
             tabcontent = document.getElementsByClassName("tab-content");
@@ -1455,9 +1456,25 @@
             navbtns = document.getElementsByClassName("nav-btn");
             for (i = 0; i < navbtns.length; i++) {
                 navbtns[i].classList.remove("active");
+                // If loaded automatically via URL hash (when evt is null), highlight the matching button
+                if (!evt && navbtns[i].getAttribute("onclick") && navbtns[i].getAttribute("onclick").includes("'" + tabName + "'")) {
+                    navbtns[i].classList.add("active");
+                }
             }
-            document.getElementById(tabName).classList.add("active");
-            evt.currentTarget.classList.add("active");
+            
+            let targetTab = document.getElementById(tabName);
+            if (targetTab) {
+                targetTab.classList.add("active");
+            }
+            
+            if (evt && evt.currentTarget) {
+                evt.currentTarget.classList.add("active");
+                // Update browser URL address bar without reloading or jumping
+                history.pushState(null, null, '#' + tabName);
+            } else if (!evt) {
+                // Ensure address bar matches when auto-loaded
+                history.replaceState(null, null, '#' + tabName);
+            }
         }
 
         // TOOLS SUB-TABS LOGIC
@@ -1470,9 +1487,20 @@
             toolbtns = document.getElementsByClassName("tool-btn");
             for (i = 0; i < toolbtns.length; i++) {
                 toolbtns[i].classList.remove("active-tool");
+                if (!evt && toolbtns[i].getAttribute("onclick") && toolbtns[i].getAttribute("onclick").includes("'" + toolName + "'")) {
+                    toolbtns[i].classList.add("active-tool");
+                }
             }
-            document.getElementById(toolName).classList.add("active-tool");
-            evt.currentTarget.classList.add("active-tool");
+            
+            let targetTool = document.getElementById(toolName);
+            if (targetTool) {
+                targetTool.classList.add("active-tool");
+            }
+
+            if (evt && evt.currentTarget) {
+                evt.currentTarget.classList.add("active-tool");
+                history.pushState(null, null, '#' + toolName);
+            }
         }
 
         // TOOL 1: Bearing Capacity Calculation
@@ -1529,14 +1557,51 @@
             document.getElementById('settlement-result').innerText = sc.toFixed(2) + " mm";
         }
         
-        // Initial Calculation on page load for all tools
+        // Initial Calculation and URL Hash Checking on page load
         window.onload = function() {
             calcBearing();
             calcSPT();
             calcSettlement();
-            showSlides(); // Starts the background image slideshow
+            showSlides(); // Starts background slideshow
+            
+            // CHECK FOR SHARED URL HASH ON LOAD
+            if (window.location.hash) {
+                let hashName = window.location.hash.substring(1); // removes the '#'
+                let targetEl = document.getElementById(hashName);
+                
+                if (targetEl) {
+                    // Check if it's a main tab (e.g. #research, #cv, #roadmap)
+                    if (targetEl.classList.contains('tab-content')) {
+                        openTab(null, hashName);
+                    } 
+                    // Check if it's a calculator tool (e.g. #spt-tool)
+                    else if (targetEl.classList.contains('tool-panel')) {
+                        openTab(null, 'geonexus');
+                        openTool(null, hashName);
+                    } 
+                    // Otherwise, if it's an internal element (like #stage1 in Roadmap), open parent tab and scroll
+                    else {
+                        let parentTab = targetEl.closest('.tab-content');
+                        if (parentTab) {
+                            openTab(null, parentTab.id);
+                            setTimeout(() => {
+                                targetEl.scrollIntoView({ behavior: 'smooth' });
+                            }, 100);
+                        }
+                    }
+                }
+            }
+        };
+
+        // Handle browser Back/Forward buttons smoothly
+        window.onpopstate = function() {
+            if (window.location.hash) {
+                let hashName = window.location.hash.substring(1);
+                if (document.getElementById(hashName) && document.getElementById(hashName).classList.contains('tab-content')) {
+                    openTab(null, hashName);
+                }
+            } else {
+                openTab(null, 'home');
+            }
         };
     </script>
-
-</body>
-</html>
