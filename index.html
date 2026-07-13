@@ -605,13 +605,13 @@
 <body>
 
     <header>
-        <div class="logo-container">
-            <img src="ChatGPT Image Jun 23, 2026, 07_36_03 AM.png" alt="The GeoNexus Logo" class="logo-img">
-            <div class="logo">
-              <a href="http://thegeonexus.in" style="text-decoration:none; color:inherit;">The GeoNexus</a>
+        <!-- CLICKABLE BRAND LOGO & TEXT -->
+        <a href="https://thegeonexus.in/#home" onclick="openTab(null, 'home'); window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="logo-container" style="text-decoration: none; color: white; cursor: pointer;">
+            <img src="favicon.png" alt="The GeoNexus Logo" class="logo-img">
+            <div class="logo" style="font-size: 1.5rem; font-weight: bold; letter-spacing: 1px;">
+              The GeoNexus
             </div>
-
-        </div>
+        </a>
         <nav>
             <button class="nav-btn active" onclick="openTab(event, 'home')">Home</button>
             <button class="nav-btn" onclick="openTab(event, 'research')">Research</button>
