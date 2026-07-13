@@ -30,6 +30,121 @@
   </script>
     
     <style>
+        /* --- GEONEXUS VIRTUAL ASSISTANT WIDGET --- */
+#geonexus-bot-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #0b1c3a;
+    color: #4da6ff;
+    border: 2px solid #4da6ff;
+    border-radius: 50px;
+    padding: 12px 22px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(77, 166, 255, 0.5);
+    cursor: pointer;
+    z-index: 9999;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#geonexus-bot-btn:hover {
+    background-color: #4da6ff;
+    color: #0b1c3a;
+    box-shadow: 0 0 25px rgba(77, 166, 255, 0.9);
+    transform: translateY(-3px);
+}
+#geonexus-chat-window {
+    display: none;
+    position: fixed;
+    bottom: 85px;
+    right: 25px;
+    width: 350px;
+    height: 480px;
+    background-color: #0b1c3a;
+    border: 2px solid #4da6ff;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.8);
+    z-index: 9999;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+}
+.chat-header {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(77, 166, 255, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.95rem;
+}
+.chat-body {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(244, 247, 246, 0.95);
+}
+.chat-msg {
+    max-width: 80%;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+.bot-msg {
+    background-color: #e0e6ed;
+    color: #0b1c3a;
+    align-self: flex-start;
+    border-left: 3px solid #0b1c3a;
+}
+.user-msg {
+    background-color: #0b1c3a;
+    color: #4da6ff;
+    align-self: flex-end;
+    border-right: 3px solid #4da6ff;
+}
+.chat-footer {
+    padding: 10px;
+    background: white;
+    border-top: 1px solid #ccc;
+    display: flex;
+    gap: 5px;
+}
+.chat-footer input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    font-size: 0.85rem;
+}
+.chat-footer button {
+    background: #0b1c3a;
+    color: #4da6ff;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: 0.2s;
+}
+.chat-footer button:hover {
+    background: #4da6ff;
+    color: #0b1c3a;
+}
         /* START OF SOCIAL ICONS SECTION */      
         .social-grid-container {
             display: flex;
@@ -1401,7 +1516,28 @@
             </div>
         </div>
     </div>
+<!-- START OF VIRTUAL ASSISTANT WIDGET -->
+<button id="geonexus-bot-btn" onclick="toggleChat()">
+    <i class="bi bi-robot"></i> Ask GeoNexus AI
+</button>
 
+<div id="geonexus-chat-window">
+    <div class="chat-header">
+        <span><i class="bi bi-cpu-fill me-2" style="color: #4da6ff;"></i>GeoNexus Assistant</span>
+        <i class="bi bi-x-lg" style="cursor: pointer;" onclick="toggleChat()"></i>
+    </div>
+    <div class="chat-body" id="chat-messages">
+        <div class="chat-msg bot-msg">
+            👋 <strong>Hi there! I'm the GeoNexus AI Assistant.</strong><br>
+            Ask me anything about O.P. Thakur's geotechnical research, GATE ranks, Ladakh field projects, or how to use the interactive calculators!
+        </div>
+    </div>
+    <div class="chat-footer">
+        <input type="text" id="chat-input" placeholder="Ask about research, CV, Ladakh..." onkeypress="handleKey(event)">
+        <button onclick="sendMessage()"><i class="bi bi-send-fill"></i></button>
+    </div>
+</div>
+<!-- END OF VIRTUAL ASSISTANT WIDGET -->
   <!-- START OF COMPACT INQUIRY & FOOTER SECTION -->
 <footer class="bg-dark text-white pt-4 pb-3 mt-4" style="background-color: #04142c !important;">
   <div class="container">
@@ -1614,4 +1750,65 @@
                 openTab(null, 'home');
             }
         };
+          // --- VIRTUAL ASSISTANT LOGIC ---
+        function toggleChat() {
+            const chatWin = document.getElementById('geonexus-chat-window');
+            if (chatWin.style.display === 'flex') {
+                chatWin.style.display = 'none';
+            } else {
+                chatWin.style.display = 'flex';
+                document.getElementById('chat-input').focus();
+            }
+        }
+
+        function handleKey(e) {
+            if (e.key === 'Enter') sendMessage();
+        }
+
+        function sendMessage() {
+            const inputField = document.getElementById('chat-input');
+            const userText = inputField.value.trim();
+            if (!userText) return;
+
+            // Display user message
+            appendMessage(userText, 'user-msg');
+            inputField.value = '';
+
+            // Simulate AI thinking delay
+            setTimeout(() => {
+                const reply = getBotResponse(userText.toLowerCase());
+                appendMessage(reply, 'bot-msg');
+            }, 600);
+        }
+
+        function appendMessage(text, className) {
+            const msgContainer = document.getElementById('chat-messages');
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `chat-msg ${className}`;
+            msgDiv.innerHTML = text;
+            msgContainer.appendChild(msgDiv);
+            msgContainer.scrollTop = msgContainer.scrollHeight;
+        }
+
+        // Knowledge Base Engine (Auto-answers based on your website content)
+        function getBotResponse(input) {
+            if (input.includes('gate') || input.includes('rank') || input.includes('score')) {
+                return "🎯 <strong>GATE Qualification:</strong> O.P. Thakur has qualified the GATE exam <strong>4 times</strong> (2020, 2023, 2024, and 2026)! Check the <a href='#cv' onclick='openTab(null, \"cv\"); toggleChat();'>Curriculum Vitae</a> section for details.";
+            } else if (input.includes('ladakh') || input.includes('field') || input.includes('nhidcl') || input.includes('tunnel')) {
+                return "🏔️ <strong>High-Altitude Engineering:</strong> He served as Site Office In-charge for NHIDCL in Ladakh, coordinating the Airborne Electromagnetic (AEM) survey for the Tanglang La & Lachung La tunnels and supervising LGFS prefab structures. <a href='#field-visits' onclick='openTab(null, \"field-visits\"); toggleChat();'>Click to view Field Visits</a>.";
+            } else if (input.includes('calc') || input.includes('spt') || input.includes('bearing') || input.includes('tool') || input.includes('software')) {
+                return "🧮 <strong>Interactive Calculators:</strong> You can test live geotechnical simulations for Terzaghi Bearing Capacity, SPT N60 Energy Corrections, and 1D Consolidation Settlement right here! <a href='#geonexus' onclick='openTab(null, \"geonexus\"); toggleChat();'>Open The GeoNexus Dashboard</a>.";
+            } else if (input.includes('research') || input.includes('ai') || input.includes('ml') || input.includes('pinn') || input.includes('machine learning')) {
+                return "🤖 <strong>Geo-AI Research:</strong> His research bridges classical geotechnics with Physics-Informed Neural Networks (PINNs), using XGBoost and Random Forest for soil classification and liquefaction prediction. <a href='#research' onclick='openTab(null, \"research\"); toggleChat();'>Explore Research Track</a>.";
+            } else if (input.includes('contact') || input.includes('email') || input.includes('hire') || input.includes('phone') || input.includes('mandi')) {
+                return "📧 <strong>Get in Touch:</strong> You can email him directly at <a href='mailto:opthakuriitm@gmail.com'>opthakuriitm@gmail.com</a> or check his full address in Himachal Pradesh at the bottom of the page!";
+            } else if (input.includes('blog') || input.includes('write') || input.includes('studio') || input.includes('article')) {
+                return "📝 <strong>Geo-AI Writing Studio:</strong> Want to write technical articles with free AI research assistants? Visit our <a href='studio.html'>AI Writing Studio</a>!";
+            } else if (input.includes('hi') || input.includes('hello') || input.includes('hey') || input.includes('who are you')) {
+                return "Hello! How can I assist you today? Feel free to ask about O.P. Thakur's education at IIT Madras, his field experience, or our Geo-AI tools!";
+            } else {
+                return "💡 I'm tuned to answer questions about O.P. Thakur's portfolio! Try asking about his <strong>GATE qualification</strong>, <strong>Ladakh field visits</strong>, <strong>interactive calculators</strong>, or <strong>contact info</strong>.";
+            }
+        }
+    </script>
     </script>
